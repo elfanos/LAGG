@@ -78,6 +78,9 @@ public class MainActivity extends Activity {
         setContentView(mCardScroller);
     }
     public void patientMenu(String input){
+        Intent resultIntent = new Intent(this,PatientActivity.class);
+        resultIntent.putExtra(PatientActivity.PATIENTSEARCH,input);
+        startActivity(resultIntent);
 
     }
     public void mapViewMenu(){

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/patient_med"
+        android:title="Medication" />
+    <item android:id="@+id/patient_history"
+        android:title="History" />
+    <item android:id="@+id/go_back"
+        android:title="Go back" />
+</menu>
