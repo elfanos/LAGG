@@ -2,4 +2,6 @@
     <string name="app_name">LAGG</string>
     <string name="title_activity_main">Hello World Immersion</string>
     <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_static_map">StaticMapActivity</string>
 </resources>
