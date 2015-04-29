@@ -97,7 +97,6 @@ public class MainActivity extends Activity {
                 if(gesture == Gesture.TAP){
                     Log.d("TAG","One tap");
                     openOptionsMenu();
-
                     return true;
                 }else if(gesture == Gesture.TWO_TAP){
                     return true;
@@ -185,10 +184,18 @@ public class MainActivity extends Activity {
      * Builds a Glass styled "Hello World!" view using the {@link CardBuilder} class.
      */
     private View buildView() {
-        CardBuilder card = new CardBuilder(this, CardBuilder.Layout.TEXT);
+        CardBuilder card = new CardBuilder(this, CardBuilder.Layout.COLUMNS);
 
         card.setText(R.string.app_name);
-        card.addImage(R.drawable.ic_glass_logo);
+
+        card.setIcon(R.drawable.ic_glass_logo);
+        //card.addImage(R.drawable.ic_glass_logo);
+
+        return card.getView();
+    }
+    private View menuView(){
+
+        CardBuilder card = new CardBuilder(this, CardBuilder.Layout.COLUMNS);
 
         return card.getView();
     }
