@@ -15,6 +15,7 @@ import android.app.Activity;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -91,9 +92,16 @@ public class MainActivity extends Activity {
         startActivity(resultIntent);
 
     }
-    public void mapViewMenu(){
-        Intent resultsIntent = new Intent(this, StaticMapActivity.class);
-        startActivity(resultsIntent);
+    public void mapViewMenu(double latitude, double longitude){
+        /*Intent resultsIntent = new Intent(this, MapActivity.class);
+        startActivity(resultsIntent);*/
+        latitude = 63.8266330;
+        longitude = 20.2999490;
+
+
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse("google.navigation:q="+latitude+","+longitude));
+        startActivity(intent);
 
     }
     public void notificationMenu(){
@@ -173,7 +181,7 @@ public class MainActivity extends Activity {
                     notificationMenu();
                     break;
                 case R.id.map_viewer:
-                    mapViewMenu();
+                    mapViewMenu(0,0);
                     break;
                 case R.id.patient_info:
                     patientMenu("Name");
