@@ -34,7 +34,14 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
-
+        </activity>
+        <activity
+            android:name=".NotificationActivity"
+            android:label="@string/title_activity_notification" >
+            android:parentActivity=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
         </activity>
     </application>
 

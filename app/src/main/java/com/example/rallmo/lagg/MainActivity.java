@@ -5,11 +5,16 @@ import com.google.android.glass.view.WindowUtils;
 import com.google.android.glass.widget.CardBuilder;
 import com.google.android.glass.widget.CardScrollAdapter;
 import com.google.android.glass.widget.CardScrollView;
+import com.google.android.glass.timeline.LiveCard;
+import com.google.android.glass.timeline.GlRenderer;
+import com.google.android.glass.timeline.DirectRenderingCallback;
+import com.google.android.glass.timeline.LiveCard;
 
+import android.animation.TimeAnimator;
 import android.app.Activity;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
-import android.media.AudioManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -34,6 +39,9 @@ public class MainActivity extends Activity {
 
     private View mView;
     private GestureDetector mGestureDetector;
+    private LiveCard mLiveCard;
+
+
 
     @Override
     protected void onCreate(Bundle bundle) {
@@ -86,8 +94,14 @@ public class MainActivity extends Activity {
     public void mapViewMenu(){
         Intent resultsIntent = new Intent(this, StaticMapActivity.class);
         startActivity(resultsIntent);
+
     }
     public void notificationMenu(){
+        //CardBuilder mCard = new CardBuilder(this,CardBuilder.Layout.COLUMNS);
+
+        /*Intent resultIntent = new Intent(this, NotificationActivity.class);
+        mLiveCard.publish(LiveCard.PublishMode.REVEAL);*/
+
 
     }
     private GestureDetector createGestureDetector(Context context){
